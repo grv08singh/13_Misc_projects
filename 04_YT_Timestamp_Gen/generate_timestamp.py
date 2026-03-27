@@ -2,7 +2,7 @@ import google.generativeai as genai
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-genai.configure(api_key=API_KEY)
+genai.configure(api_key="AIzaSyAsAEOT0T2Zl0hJQCsSntcSfdenh7PTp0A")
 
 generation_config = {
     "temperature": 1,
