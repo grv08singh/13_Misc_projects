@@ -2,7 +2,8 @@ import google.generativeai as genai
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-genai.configure(api_key="AIzaSyAsAEOT0T2Zl0hJQCsSntcSfdenh7PTp0A")
+genai.configure(api_key="AIzaSyCNasUcQk2EtJ-zC7frba2pQCIwTeYHEVI")
+
 
 generation_config = {
     "temperature": 1,
@@ -13,7 +14,7 @@ generation_config = {
 }
 
 model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash",
+    model_name="gemini-2.5-flash",
     generation_config=generation_config,
 )
 
