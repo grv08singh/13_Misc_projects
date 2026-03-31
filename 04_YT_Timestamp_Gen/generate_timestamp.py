@@ -2,7 +2,7 @@ import google.generativeai as genai
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-genai.configure(api_key="AIzaSyAsAEOT0T2Zl0hJQCsSntcSfdenh7PTp0A")
+genai.configure(api_key="AIzaSyAQ5BNeQfxlUSdFQbRKszvqavHLl-2otQA")
 
 generation_config = {
     "temperature": 1,
@@ -13,7 +13,7 @@ generation_config = {
 }
 
 model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash",
+    model_name="gemini-2.5-flash",
     generation_config=generation_config,
 )
 
@@ -24,10 +24,10 @@ def evaluate_timestamps(captions):
     You are given a YouTube video transcript with timestamps. Your task is to extract only the important or meaningful moments from the transcript.
 
     🎯 For each important moment:
-    - Include the timestamp (HH:MM format)
+    - Include the timestamp (HH:MM:SS format)
     - Write just 1 to 3 words describing what's happening
     - Each line should follow this format:  
-    `timestamp label`, for example: `00:00 Intro`
+    `timestamp label`, for example: `00:00:00 Intro`
 
     🛑 DO NOT return a JSON list.  
     ✅ Just return plain lines like:
@@ -36,8 +36,7 @@ def evaluate_timestamps(captions):
     00:45 Formula Example  
     ...
 
-    💡 Only include timestamps where new sections or key actions begin and i need only the super important
-    only remove any unneccessary ones you know what i mean right innclude only the super important timestamp only.  
+    💡 Only include super important timestamps where new question/problem start.  
     ⛔️ Skip unimportant lines or filler content.
 
     Here is the transcript:
